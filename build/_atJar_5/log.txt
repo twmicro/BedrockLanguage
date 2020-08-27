@@ -1,0 +1,5 @@
+Args: "--inJar", "/home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-injected.jar", "--outJar", "/home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5_mapped_snapshot_20200514-1.16/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16.jar", "--logFile", "accesstransform.log", "--atFile", "/home/twmicro/MCForge/Mods/BedrockLang/build/_atJar_5/parent_at.cfg"
+Classpath: /home/twmicro/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/accesstransformers/1.0.5/accesstransformers-1.0.5-fatjar.jar
+WorkDir: /home/twmicro/MCForge/Mods/BedrockLang/build/_atJar_5
+Main: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================
