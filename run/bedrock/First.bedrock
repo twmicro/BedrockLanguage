@@ -1,7 +1,0 @@
-block ("first_bedrock_block")
-{
-    breakingSound = plants,
-    hardness = -1,
-    resistance = 6000,
-    group = building_blocks
-}

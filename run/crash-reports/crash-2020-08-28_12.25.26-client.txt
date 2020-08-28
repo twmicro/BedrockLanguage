@@ -1,0 +1,107 @@
+---- Minecraft Crash Report ----
+// Oops.
+
+Time: 28.08.20 12:25
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at com.intellij.rt.coverage.data.ClassData.touchLine(ClassData.java:112) ~[?:?] {}
+	at com.intellij.rt.coverage.data.ProjectData.touchLine(ProjectData.java:239) ~[?:?] {re:classloading}
+	at thedarkcolour.kotlinforforge.eventbus.KotlinEventBus.post(KotlinEventBus.kt:367) ~[kotlinforforge-1.4.1.jar:?] {re:classloading}
+	at thedarkcolour.kotlinforforge.KotlinModContainer.acceptEvent(KotlinModContainer.kt:152) ~[kotlinforforge-1.4.1.jar:1.4.1] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at java.util.HashMap.forEach(HashMap.java:1289) ~[?:1.8.0_265] {}
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:220) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading}
+	at net.minecraft.client.audio.SoundEngine.<init>(SoundEngine.java:67) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.audio.SoundHandler.<init>(SoundHandler.java:45) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:439) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:149) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265] {}
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55) ~[forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-6.1.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-6.1.1.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-6.1.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-6.1.1.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-6.1.1.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105) [forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.intellij.rt.coverage.data.ClassData.touchLine(ClassData.java:112)
+	at com.intellij.rt.coverage.data.ProjectData.touchLine(ProjectData.java:239)
+	at thedarkcolour.kotlinforforge.eventbus.KotlinEventBus.post(KotlinEventBus.kt:367)
+	at thedarkcolour.kotlinforforge.KotlinModContainer.acceptEvent(KotlinModContainer.kt:152)
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260)
+	at java.util.HashMap.forEach(HashMap.java:1289)
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:220)
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260)
+	at net.minecraft.client.audio.SoundEngine.<init>(SoundEngine.java:67)
+	at net.minecraft.client.audio.SoundHandler.<init>(SoundHandler.java:45)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:439)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:105)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.2
+	Minecraft Version ID: 1.16.2
+	Operating System: Linux (amd64) version 5.4.0-42-generic
+	Java Version: 1.8.0_265, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Private Build
+	Memory: 175492240 bytes (167 MB) / 934281216 bytes (891 MB) up to 1834483712 bytes (1749 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	ModLauncher: 6.1.1+74+master.966c698
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.jar mixin PLUGINSERVICE 
+		/eventbus-3.0.3-service.jar eventbus PLUGINSERVICE 
+		/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.2.0-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 33.0
+	Forge: net.minecraftforge:33.0.5
+	FML Language Providers: 
+		kotlinforforge@1.4.1
+		javafml@33.0
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.15.2 CREATE_REGISTRIES}
+		main ExampleMod {bedrocklang@NONE ERROR}
+		forge-1.16.2-33.0.5_mapped_snapshot_20200514-1.16-recomp.jar Forge {forge@31.2.19 CREATE_REGISTRIES}
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: GeForce MX110/PCIe/SSE2 GL version 4.6.0 NVIDIA 440.100, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	CPU: 8x Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz

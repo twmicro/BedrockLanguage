@@ -1,7 +1,8 @@
 package com.twmicro.bedrocklang
 
-@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION,
-    AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.EXPRESSION, AnnotationTarget.PROPERTY
-)
-@Retention(AnnotationRetention.SOURCE)
-annotation class BedrockType ()
+import javax.annotation.processing.SupportedAnnotationTypes
+
+@Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS, AnnotationTarget.PROPERTY)
+@Retention(AnnotationRetention.RUNTIME)
+@SupportedAnnotationTypes
+annotation class BedrockType

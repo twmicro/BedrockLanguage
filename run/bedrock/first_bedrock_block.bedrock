@@ -1,0 +1,7 @@
+block (first_bedrock_block)
+{
+    breakingSound = plants,
+    hardness = 6000,
+    resistance = 6000,
+    group = building_blocks
+}

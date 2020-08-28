@@ -33,6 +33,7 @@ object ExampleMod {
     init {
         LOGGER.log(Level.INFO, "Hello world!")
 
+        BedrockLang.init()
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.REGISTRY.register(MOD_BUS)
         ModItems.REGISTRY.register(MOD_BUS)
