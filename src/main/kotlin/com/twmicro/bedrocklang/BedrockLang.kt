@@ -4,13 +4,14 @@ import com.twmicro.bedrocklang.types.ModBlocks
 import com.twmicro.bedrocklang.types.ModItems
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.material.Material
-import net.minecraft.item.ItemGroup
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import net.minecraft.block.Block
-import net.minecraft.item.BlockItem
-import net.minecraft.item.Item
+import net.minecraft.item.*
+import net.minecraft.item.crafting.Ingredient
+import net.minecraftforge.common.ToolType
+import net.minecraftforge.registries.ForgeRegistries
 
 object BedrockLang {
     val bedrockSourcesPath = "bedrock"
@@ -43,14 +44,19 @@ object BedrockLang {
     class block (val registry_name: String) {
         @BedrockType
         var breakingSound : MultiStatic<Material>? = null
+
         @BedrockType
         var hardness : Float? = null
+
         @BedrockType
         var resistance : Float? = null
+
         @BedrockType
         var slipperiness : Float? = null
+
         @BedrockType
         var speedFactor : Float? = null
+
         @BedrockType
         var group : MultiStatic<ItemGroup>? = null
 
@@ -71,4 +77,150 @@ object BedrockLang {
             }
         }
     }
+
+    abstract class TieredBedrock (registry_name: String){
+        @BedrockType
+        var maxUses: Int? = null
+
+        @BedrockType
+        var damage: Float? = null
+
+        @BedrockType
+        var efficiency: Float? = null
+
+        @BedrockType
+        var harvestLevel: Int? = null
+
+        @BedrockType
+        var repairMaterial: MultiForge? = null
+
+        @BedrockType
+        var enchantability: Int? = null
+
+        @BedrockType
+        var group: MultiStatic<ItemGroup>? = null
+
+        abstract fun execute()
+
+        fun getTier() : IItemTier {
+            if(damage == null) damage = 1F
+            if(efficiency == null) efficiency = 1F
+            if(harvestLevel == null) harvestLevel = 1
+            if(maxUses == null) maxUses = 50
+            if(enchantability == null) enchantability = 50
+            if(repairMaterial == null) repairMaterial = MultiForge("@item[minecraft:barrier]")
+            if(group == null) group = MultiStatic(ItemGroup::class, "building_blocks")
+            return object: IItemTier {
+                override fun getMaxUses(): Int {
+                    return this@TieredBedrock.maxUses!!
+                }
+
+                override fun getEfficiency(): Float {
+                    return this@TieredBedrock.efficiency!!
+                }
+
+                override fun getAttackDamage(): Float {
+                    return this@TieredBedrock.damage!!
+                }
+
+                override fun getHarvestLevel(): Int {
+                    return this@TieredBedrock.harvestLevel!!
+                }
+
+                override fun getEnchantability(): Int {
+                    return this@TieredBedrock.enchantability!!
+                }
+
+                override fun getRepairMaterial(): Ingredient {
+                    return Ingredient.fromItems(this@TieredBedrock.repairMaterial!!.toJVM() as Item)
+                }
+            }
+        }
+    }
+
+    @BedrockType
+    class sword (val registry_name: String) : TieredBedrock(registry_name) {
+        @BedrockType
+        var attackSpeed: Float? = null
+
+        override fun execute() {
+            if(attackSpeed == null) attackSpeed = 0.1F
+            ModItems.REGISTRY.register(registry_name) {
+                SwordItem(getTier(), damage!!.toInt(), attackSpeed!!, Item.Properties().group(group!!.toJVM()!! as ItemGroup))
+            }
+        }
+    }
+
+    @BedrockType
+    class pickaxe (val registry_name: String) : TieredBedrock(registry_name) {
+        @BedrockType
+        var attackSpeed: Float? = null
+
+        @BedrockType
+        var level : Int? = null
+
+        override fun execute() {
+            if(attackSpeed == null) attackSpeed = 0.1F
+            if(level != null) level = 1
+            ModItems.REGISTRY.register(registry_name) {
+                PickaxeItem(getTier(), damage!!.toInt(), attackSpeed!!, Item.Properties().group(group!!.toJVM()!! as ItemGroup).addToolType(
+                    ToolType.AXE, level!!))
+            }
+        }
+    }
+
+    @BedrockType
+    class axe (val registry_name: String) : TieredBedrock(registry_name) {
+        @BedrockType
+        var attackSpeed: Float? = null
+
+        @BedrockType
+        var level : Int? = null
+
+        override fun execute() {
+            if(attackSpeed == null) attackSpeed = 0.1F
+            if(level != null) level = 1
+            ModItems.REGISTRY.register(registry_name) {
+                AxeItem(getTier(), damage!!, attackSpeed!!, Item.Properties().group(group!!.toJVM()!! as ItemGroup).addToolType(ToolType.AXE, level!!))
+            }
+        }
+    }
+
+    @BedrockType
+    class hoe (val registry_name: String) : TieredBedrock(registry_name) {
+        @BedrockType
+        var attackSpeed: Float? = null
+
+        @BedrockType
+        var level : Int? = null
+
+        override fun execute() {
+            if(attackSpeed == null) attackSpeed = 0.1F
+            if(level != null) level = 1
+            ModItems.REGISTRY.register(registry_name) {
+                HoeItem(getTier(),
+                    damage!!.toInt(), attackSpeed!!, Item.Properties().group(group!!.toJVM()!! as ItemGroup).addToolType(ToolType.HOE, level!!))
+            }
+        }
+    }
+
+    @BedrockType
+    class shovel (val registry_name: String) : TieredBedrock(registry_name) {
+        @BedrockType
+        var attackSpeed: Float? = null
+
+        @BedrockType
+        var level : Int? = null
+
+        override fun execute() {
+            if(attackSpeed == null) attackSpeed = 0.1F
+            if(level != null) level = 1
+            ModItems.REGISTRY.register(registry_name) {
+                ShovelItem(getTier(),
+                    damage!!, attackSpeed!!, Item.Properties().group(group!!.toJVM()!! as ItemGroup).addToolType(ToolType.SHOVEL, level!!))
+            }
+        }
+    }
+
+
 }

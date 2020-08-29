@@ -13,13 +13,12 @@ object BedrockLex {
     private const val ASSIGNMENT = "="
 
     fun parse(source: String) {
-        val buffer: String = ""
         val baseClassRegex = Regex("""\{.*}""", RegexOption.DOT_MATCHES_ALL)
         val result = baseClassRegex.find(source)
         try {
             if (result != null) {
                 val childrenCode = result.value.replace("{", "").replace("}", "")
-                val baseClassName = source.substring(0, source.indexOf("(") - 1).replace(" ", "")
+                val baseClassName = source.substring(0, source.indexOf("(")).replace(" ", "")
                 val args = source.substring(source.indexOf("(") + 1, source.indexOf(")")).replace(" ", "").split(SEPERATOR).toTypedArray()
                 val bedrockClass = BedrockClass(baseClassName, args, childrenCode)
                 execute(bedrockClass)
@@ -44,12 +43,18 @@ object BedrockLex {
                                 if(it1 is KMutableProperty<*>) {
                                     for(a in assignments){
                                         if(a.contains(it1.name)) {
-                                            if (it1.returnType.classifier == String::class)
-                                                it1.setter.call(instance, a.split(ASSIGNMENT)[1].replace(" ", "").replace("\n", ""))
+                                            val value = a.split(ASSIGNMENT)[1].replace(" ", "").replace("\n", "")
+                                            if(it1.returnType.classifier == MultiStatic::class)
+                                                it1.setter.call(instance, MultiStatic(it1.returnType.arguments[0].type!!.classifier as KClass<*>, value))
+                                            else if(it1.returnType.classifier == MultiForge::class)
+                                                it1.setter.call(instance, MultiForge(value))
+                                            else if(it1.returnType.classifier == Int::class)
+                                                it1.setter.call(instance, value.toInt())
                                             else if(it1.returnType.classifier == Float::class)
-                                                it1.setter.call(instance, a.split(ASSIGNMENT)[1].replace(" ", "").replace("\n", "").toFloat())
-                                            else if(it1.returnType.classifier == MultiStatic::class)
-                                                it1.setter.call(instance, MultiStatic(it1.returnType.arguments[0].type!!.classifier as KClass<*>, a.split(ASSIGNMENT)[1].replace(" ", "").replace("\n", "")))
+                                                it1.setter.call(instance, value.toFloat())
+                                            else it1.setter.call(instance, cast(value,
+                                                it1.returnType.classifier as KClass<out Any>
+                                            ))
                                         }
                                     }
                                 }
@@ -61,6 +66,8 @@ object BedrockLex {
             }
         }
     }
+
+    private fun <T: Any> cast(any: Any, clazz: KClass<out T>): T = clazz.javaObjectType.cast(any)
 
     open class Construction (val content: String)
     class BedrockClass (val name: String, val constructorParams: Array<String>, val childrenCode: String) :

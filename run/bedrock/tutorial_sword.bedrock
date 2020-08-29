@@ -1,0 +1,6 @@
+sword(tutorial_sword)
+{
+    damage = 50,
+    attackSpeed = 1,
+	repairMaterial = @item[minecraft:diamond]
+}

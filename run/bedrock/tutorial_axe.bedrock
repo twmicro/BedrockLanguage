@@ -1,0 +1,8 @@
+axe(tutorial_axe)
+{
+	damage = 2,
+    efficiency = 20,
+	level = 6,
+	harvestLevel = 5,
+	group = tools
+}

@@ -1,0 +1,8 @@
+hoe(tutorial_hoe)
+{
+	damage = 1,
+    efficiency = 20,
+	level = 6,
+	harvestLevel = 5,
+	group = tools
+}
