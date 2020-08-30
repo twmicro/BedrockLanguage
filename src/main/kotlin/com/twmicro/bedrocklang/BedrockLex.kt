@@ -12,6 +12,7 @@ object BedrockLex {
     private const val CALL_FUNCTION = "()"
     private const val ASSIGNMENT = "="
 
+
     fun parse(source: String) {
         val baseClassRegex = Regex("""\{.*}""", RegexOption.DOT_MATCHES_ALL)
         val result = baseClassRegex.find(source)

@@ -1,0 +1,7 @@
+block (test_block)
+{
+    breakingSound = plants,
+    hardness = 100,
+    resistance = 18000000,
+    group = building_blocks
+}

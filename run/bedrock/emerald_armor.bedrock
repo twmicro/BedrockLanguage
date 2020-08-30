@@ -1,0 +1,8 @@
+armor(emerald) {
+	helmetProtection = 10,
+    chestplateProtection = 15,
+    leggingsProtection = 15,
+    bootsProtection = 10,
+    toughness = 200,
+    repairMaterial = @item[minecraft:emerald]
+}

@@ -1,15 +1,15 @@
-Args: "--clean", "/home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar", "--output", "/home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-binpatched.jar", "--apply", "/home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-binpatches.lzma"
-Classpath: /home/twmicro/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/binarypatcher/1.0.12/binarypatcher-1.0.12-fatjar.jar
+Args: "--clean", "/root/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar", "--output", "/root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.22/forge-1.16.2-33.0.22-binpatched.jar", "--apply", "/root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.22/forge-1.16.2-33.0.22-binpatches.lzma"
+Classpath: /root/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/binarypatcher/1.0.12/binarypatcher-1.0.12-fatjar.jar
 WorkDir: /home/twmicro/MCForge/Mods/BedrockLang/build/_applyBinpatches_2
 Main: net.minecraftforge.binarypatcher.ConsoleTool
 ====================================
 Applying: 
-  Clean:     /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar
-  Output:    /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-binpatched.jar
+  Clean:     /root/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar
+  Output:    /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.22/forge-1.16.2-33.0.22-binpatched.jar
   KeepData:  false
   Unpatched: false
-  Patches:   /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-binpatches.lzma
-Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.5/forge-1.16.2-33.0.5-binpatches.lzma
+  Patches:   /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.22/forge-1.16.2-33.0.22-binpatches.lzma
+Loading patches file: /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.16.2-33.0.22/forge-1.16.2-33.0.22-binpatches.lzma
   Reading patch com.mojang.blaze3d.platform.GlStateManager$1.binpatch
     Checksum: 27fccb26 Exists: true
   Reading patch com.mojang.blaze3d.platform.GlStateManager$AlphaState.binpatch
@@ -1078,6 +1078,28 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: 6890d520 Exists: true
   Reading patch net.minecraft.entity.monster.MagmaCubeEntity.binpatch
     Checksum: 1aac299 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$1.binpatch
+    Checksum: 4eeb3b2b Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$AttackPhase.binpatch
+    Checksum: 73d627db Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$AttackPlayerGoal.binpatch
+    Checksum: 24aef817 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$BodyHelperController.binpatch
+    Checksum: 2280f19a Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$LookHelperController.binpatch
+    Checksum: 7d08da76 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$MoveGoal.binpatch
+    Checksum: 9e49423c Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$MoveHelperController.binpatch
+    Checksum: 6fa1e479 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$OrbitPointGoal.binpatch
+    Checksum: 806e71d0 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$PickAttackGoal.binpatch
+    Checksum: a2a94412 Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity$SweepAttackGoal.binpatch
+    Checksum: afc8a44f Exists: true
+  Reading patch net.minecraft.entity.monster.PhantomEntity.binpatch
+    Checksum: 3b9d351f Exists: true
   Reading patch net.minecraft.entity.monster.RavagerEntity$1.binpatch
     Checksum: 3f2a3b0d Exists: true
   Reading patch net.minecraft.entity.monster.RavagerEntity$AttackGoal.binpatch
@@ -1376,6 +1398,10 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: accec48 Exists: true
   Reading patch net.minecraft.entity.projectile.WitherSkullEntity.binpatch
     Checksum: 5e6d3ed8 Exists: true
+  Reading patch net.minecraft.fluid.FlowingFluid$1.binpatch
+    Checksum: 32f8d7f8 Exists: true
+  Reading patch net.minecraft.fluid.FlowingFluid.binpatch
+    Checksum: ada2f25 Exists: true
   Reading patch net.minecraft.fluid.Fluid.binpatch
     Checksum: 99919aed Exists: true
   Reading patch net.minecraft.fluid.FluidState.binpatch
@@ -1522,6 +1548,8 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: 6e029d0d Exists: true
   Reading patch net.minecraft.item.Items.binpatch
     Checksum: 57362bd0 Exists: true
+  Reading patch net.minecraft.item.MerchantOffer.binpatch
+    Checksum: cda6c81 Exists: true
   Reading patch net.minecraft.item.MilkBucketItem.binpatch
     Checksum: 26be6825 Exists: true
   Reading patch net.minecraft.item.MinecartItem$1.binpatch
@@ -1928,6 +1956,10 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: cdf46689 Exists: true
   Reading patch net.minecraft.tags.ITag.binpatch
     Checksum: c6f3e293 Exists: true
+  Reading patch net.minecraft.tags.ITagCollection$1.binpatch
+    Checksum: 2695402d Exists: true
+  Reading patch net.minecraft.tags.ITagCollection.binpatch
+    Checksum: 73a09c90 Exists: true
   Reading patch net.minecraft.tags.ITagCollectionSupplier$1.binpatch
     Checksum: 80ed9b7f Exists: true
   Reading patch net.minecraft.tags.ITagCollectionSupplier.binpatch
@@ -2058,6 +2090,8 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: 44ee03df Exists: true
   Reading patch net.minecraft.util.registry.Registry.binpatch
     Checksum: e073f5c8 Exists: true
+  Reading patch net.minecraft.util.registry.WorldGenRegistries.binpatch
+    Checksum: b4ffd4d6 Exists: true
   Reading patch net.minecraft.util.text.LanguageMap$1.binpatch
     Checksum: 26228efd Exists: true
   Reading patch net.minecraft.util.text.LanguageMap.binpatch
@@ -2094,6 +2128,8 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: 916f77c Exists: true
   Reading patch net.minecraft.world.World.binpatch
     Checksum: 7d4f8b6d Exists: true
+  Reading patch net.minecraft.world.WorldSettings.binpatch
+    Checksum: 498f0d6b Exists: true
   Reading patch net.minecraft.world.biome.Biome$1.binpatch
     Checksum: 497aa995 Exists: true
   Reading patch net.minecraft.world.biome.Biome$Attributes.binpatch
@@ -2114,6 +2150,8 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: c07f2c25 Exists: true
   Reading patch net.minecraft.world.biome.Biome.binpatch
     Checksum: 4f12f6af Exists: true
+  Reading patch net.minecraft.world.biome.BiomeRegistry.binpatch
+    Checksum: 1267fc59 Exists: true
   Reading patch net.minecraft.world.border.WorldBorder$1.binpatch
     Checksum: 590d3749 Exists: true
   Reading patch net.minecraft.world.border.WorldBorder$IBorderInfo.binpatch
@@ -2314,7 +2352,7 @@ Loading patches file: /home/twmicro/.gradle/caches/forge_gradle/minecraft_user_r
     Checksum: 531d664c Exists: true
   Reading patch net.minecraft.world.storage.WorldSavedData.binpatch
     Checksum: f3fb0286 Exists: true
-Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar
+Processing: /root/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joined/1.16.2-20200812.004259/joined-1.16.2-20200812.004259-srg.jar
   Patching net/minecraft/block/WebBlock 1/1
   Patching net/minecraft/block/VineBlock 1/1
   Patching net/minecraft/block/TurtleEggBlock 1/1
@@ -2387,6 +2425,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/block/AbstractBannerBlock 1/1
   Patching net/minecraft/world/biome/Biome 1/1
   Patching net/minecraft/world/spawner/WorldEntitySpawner 1/1
+  Patching net/minecraft/world/WorldSettings 1/1
   Patching net/minecraft/world/IWorldReader 1/1
   Patching net/minecraft/world/World 1/1
   Patching net/minecraft/world/ExplosionContext 1/1
@@ -2398,6 +2437,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/entity/passive/SheepEntity$1 1/1
   Patching net/minecraft/world/IBlockReader 1/1
   Patching net/minecraft/world/spawner/AbstractSpawner 1/1
+  Patching net/minecraft/item/MerchantOffer 1/1
   Patching net/minecraft/entity/monster/ZombieEntity$GroupData 1/1
   Patching net/minecraft/entity/monster/ZombieEntity$AttackTurtleEggGoal 1/1
   Patching net/minecraft/enchantment/FrostWalkerEnchantment 1/1
@@ -2526,6 +2566,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/entity/monster/SilverfishEntity 1/1
   Patching net/minecraft/entity/monster/ShulkerEntity 1/1
   Patching net/minecraft/entity/monster/RavagerEntity 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity 1/1
   Patching net/minecraft/client/gui/MapItemRenderer$Instance 1/1
   Patching net/minecraft/entity/monster/MagmaCubeEntity 1/1
   Patching net/minecraft/entity/monster/IllusionerEntity 1/1
@@ -2644,12 +2685,14 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/util/Direction$Axis$1 1/1
   Patching net/minecraft/block/RailState$1 1/1
   Patching net/minecraft/tags/ITagCollectionSupplier 1/1
+  Patching net/minecraft/tags/ITagCollection 1/1
   Patching net/minecraft/tags/ITag 1/1
   Patching net/minecraft/tags/TagRegistry 1/1
   Patching net/minecraft/tags/ItemTags 1/1
   Patching net/minecraft/tags/FluidTags 1/1
   Patching net/minecraft/tags/EntityTypeTags 1/1
   Patching net/minecraft/tags/BlockTags 1/1
+  Patching net/minecraft/fluid/FlowingFluid$1 1/1
   Patching net/minecraft/stats/StatType 1/1
   Patching net/minecraft/util/SoundEvents 1/1
   Patching net/minecraft/util/SoundEvent 1/1
@@ -3067,6 +3110,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/nbt/NBTSizeTracker 1/1
   Patching net/minecraft/nbt/CompoundNBT 1/1
   Patching net/minecraft/util/text/LanguageMap 1/1
+  Patching net/minecraft/world/biome/BiomeRegistry 1/1
   Patching net/minecraft/client/renderer/model/WeightedBakedModel$WeightedModel 1/1
   Patching net/minecraft/client/renderer/model/WeightedBakedModel$Builder 1/1
   Patching net/minecraft/data/TagsProvider 1/1
@@ -3076,6 +3120,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/data/loot/BlockLootTables 1/1
   Patching net/minecraft/data/DirectoryCache 1/1
   Patching net/minecraft/data/DataGenerator 1/1
+  Patching net/minecraft/util/registry/WorldGenRegistries 1/1
   Patching net/minecraft/particles/ParticleTypes 1/1
   Patching net/minecraft/particles/ParticleType 1/1
   Patching net/minecraft/particles/ItemParticleData 1/1
@@ -3100,6 +3145,16 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/tileentity/BannerPattern$Builder 1/1
   Patching net/minecraft/advancements/AdvancementRewards 1/1
   Patching net/minecraft/item/ArmorItem$1 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$SweepAttackGoal 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$MoveGoal 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$MoveHelperController 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$LookHelperController 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$OrbitPointGoal 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$BodyHelperController 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$PickAttackGoal 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$AttackPlayerGoal 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$AttackPhase 1/1
+  Patching net/minecraft/entity/monster/PhantomEntity$1 1/1
   Patching net/minecraft/client/renderer/model/FaceBakery$1 1/1
   Patching net/minecraft/item/crafting/ShapelessRecipe$Serializer 1/1
   Patching net/minecraft/client/gui/screen/LanguageScreen$List 1/1
@@ -3276,6 +3331,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/entity/passive/FoxEntity$SleepGoal 1/1
   Patching net/minecraft/entity/passive/FoxEntity$FindShelterGoal 1/1
   Patching net/minecraft/entity/passive/FoxEntity$SitAndLookGoal 1/1
+  Patching net/minecraft/tags/ITagCollection$1 1/1
   Patching net/minecraft/entity/passive/FoxEntity$StrollGoal 1/1
   Patching net/minecraft/entity/passive/FoxEntity$FindItemsGoal 1/1
   Patching net/minecraft/entity/passive/FoxEntity$PounceGoal 1/1
@@ -3362,6 +3418,7 @@ Processing: /home/twmicro/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/joi
   Patching net/minecraft/fluid/LavaFluid 1/1
   Patching net/minecraft/fluid/FluidState 1/1
   Patching net/minecraft/fluid/Fluid 1/1
+  Patching net/minecraft/fluid/FlowingFluid 1/1
   Patching net/minecraft/world/lighting/SkyLightEngine 1/1
   Patching net/minecraft/world/lighting/LightEngine 1/1
   Patching net/minecraft/world/lighting/LevelBasedGraph 1/1

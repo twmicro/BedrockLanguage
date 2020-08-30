@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: BedrockLang
+Implementation-Version: 1.0.0
+Specification-Vendor: examplemodsareus
+Specification-Title: examplemod
+Implementation-Timestamp: 2020-08-29T11:24:49+0300
+Specification-Version: 1
+Implementation-Vendor: examplemodsareus
+
